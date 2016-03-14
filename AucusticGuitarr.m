@@ -1,4 +1,4 @@
-function [ tone ] = AucusticGuitarr( fs, chord )
+function [ tone ] = AucusticGuitarr( duration, fs, chord )
 %AucusticGuitarr Creates a bass tone
 
 signal=randn(fs ,1);
