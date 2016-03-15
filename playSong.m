@@ -22,7 +22,7 @@ for i = 1:length(f0)
     end
     size(tones);
     if nok == 0
-        chord = AucusticGuitarr(duration(i), fs, f0(i), amplitude(i))';
+        chord = Bass(duration(i), fs, f0(i))';
         tones = [tones; chord];
         freq = [freq f0(i)];
         lens = [lens duration(i)];
