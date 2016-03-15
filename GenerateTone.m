@@ -1,4 +1,4 @@
-function [ fTot ] = GenerateTone( signal, fs, f )
+function [ fTot ] = GenerateTone( signal, fs, f,R )
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
 
@@ -7,9 +7,9 @@ z=tf('z');
 %vad ska L vara för att 1 =fs/f0 -L-0.5 ska stämma
 L=round((fs/f)-1); 
 %Överföringsfunktion Kam filtret
-HKam=(0.9999^L)*z^-L; 
+HKam=(R^L)*z^-L; 
 %Överföringsfunktion för Lågpassfiltret
-HLow= 0.5*(1+z^-1);
+HLow= 0.5*(1+z^-1); 
 %Tar fram överföringsfunktion för allpassfiltret 
 w=(2*pi*f)/fs; 
 delta=(fs/f)-L-0.5; 
